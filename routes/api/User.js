@@ -8,9 +8,17 @@ const User = require('../../models/User')
 //@desc    Register user
 //@ access Public
 
-router.post('/createUsers',(req,res) =>{ 
+router.post('/createUsers',async(req,res) =>{ 
     
-    res.send('User register')
+    const {name , email,password   } = req.body;
+    const userDoc = new User({name , email,password})
+    await userDoc.save().then((response)=>{
+        res.send("Datasaved")
+    })
+    .catch((err)=>{
+        res.send(err)
+    })
+    // res.send("create User")
 });
 
 
