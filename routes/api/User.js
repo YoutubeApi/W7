@@ -18,7 +18,6 @@ router.post('/createUsers',async(req,res) =>{
     .catch((err)=>{
         res.send(err)
     })
-    // res.send("create User")
 });
 
 
