@@ -12,9 +12,9 @@ app.get('/',(req,res)=>{
 app.use(express.json({extended:false}));
 //Definde Users
 app.use('/pref/users',require('./routes/api/User'));
-// app.use('/pref/login',require('./routes/api/login'));
-// app.use('/pref/profile',require('./routes/api/profile'));
-// app.use('/pref/add',require('./routes/api/add'));
+app.use('/pref/login',require('./routes/api/login'));
+app.use('/pref/profile',require('./routes/api/profile'));
+app.use('/pref/add',require('./routes/api/add'));
 
 const POTR = process.env.POTR || 5000;
 app.listen(POTR , ()=>{

@@ -14,12 +14,8 @@ const UserSchema = new mongooes.Schema({
         type:String,
         required:true
   
-    },
-  
-    date:{
-        type:Date,
-        default:Date.now
     }
+  
 })
 
 module.exports = User =mongooes.model('user',UserSchema);
